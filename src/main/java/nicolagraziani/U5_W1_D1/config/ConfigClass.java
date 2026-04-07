@@ -14,59 +14,59 @@ import java.util.List;
 public class ConfigClass {
 
     @Bean(name = "tomato")
-    public Topping toppingTomato() {
+    public Topping tomato() {
         return new Topping("Tomato", 0, 0);
     }
 
     @Bean(name = "cheese")
-    public Topping toppingCheese() {
+    public Topping cheese() {
         return new Topping("Cheese", 92, 0.69);
     }
 
     @Bean(name = "ham")
-    public Topping toppingHam() {
+    public Topping ham() {
         return new Topping("Ham", 35, 0.99);
     }
 
     @Bean(name = "onions")
-    public Topping toppingOnions() {
+    public Topping onions() {
         return new Topping("Onions", 22, 0.69);
     }
 
     @Bean(name = "pineapple")
-    public Topping toppingPineapple() {
+    public Topping pineapple() {
         return new Topping("Pineapple", 24, 0.79);
     }
 
     @Bean(name = "salami")
-    public Topping toppingSalami() {
+    public Topping salami() {
         return new Topping("Salami", 86, 0.99);
     }
 
     @Bean(name = "pizza_margherita")
     public Pizza pizzaMargherita() {
         List<Topping> toppings = new ArrayList<>();
-        toppings.add(toppingTomato());
-        toppings.add(toppingCheese());
+        toppings.add(tomato());
+        toppings.add(cheese());
         return new Pizza("Pizza Margherita", toppings);
     }
 
     @Bean(name = "hawaiian_pizza")
     public Pizza pizzaHawaiian() {
         List<Topping> toppings = new ArrayList<>();
-        toppings.add(toppingTomato());
-        toppings.add(toppingCheese());
-        toppings.add(toppingHam());
-        toppings.add(toppingPineapple());
+        toppings.add(tomato());
+        toppings.add(cheese());
+        toppings.add(ham());
+        toppings.add(pineapple());
         return new Pizza("Hawaiian Pizza", toppings);
     }
 
     @Bean(name = "salami_pizza")
     public Pizza pizzaSalami() {
         List<Topping> toppings = new ArrayList<>();
-        toppings.add(toppingTomato());
-        toppings.add(toppingCheese());
-        toppings.add(toppingSalami());
+        toppings.add(tomato());
+        toppings.add(cheese());
+        toppings.add(salami());
         return new Pizza("Salami Pizza", toppings);
     }
 
@@ -95,11 +95,11 @@ public class ConfigClass {
         pizzas.add(pizzaHawaiian());
         pizzas.add(pizzaSalami());
 
-        toppings.add(toppingCheese());
-        toppings.add(toppingHam());
-        toppings.add(toppingOnions());
-        toppings.add(toppingPineapple());
-        toppings.add(toppingSalami());
+        toppings.add(cheese());
+        toppings.add(ham());
+        toppings.add(onions());
+        toppings.add(pineapple());
+        toppings.add(salami());
 
         drinks.add(lemonade());
         drinks.add(water());
