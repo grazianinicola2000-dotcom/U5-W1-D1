@@ -86,24 +86,24 @@ public class ConfigClass {
     }
 
     @Bean(name = "menu")
-    public MenuPrint printMenu() {
-        List<Pizza> pizzas = new ArrayList<>();
-        List<Topping> toppings = new ArrayList<>();
-        List<Drink> drinks = new ArrayList<>();
-
-        pizzas.add(pizzaMargherita());
-        pizzas.add(pizzaHawaiian());
-        pizzas.add(pizzaSalami());
-
-        toppings.add(cheese());
-        toppings.add(ham());
-        toppings.add(onions());
-        toppings.add(pineapple());
-        toppings.add(salami());
-
-        drinks.add(lemonade());
-        drinks.add(water());
-        drinks.add(wine());
+    public MenuPrint printMenu(List<Pizza> pizzas, List<Topping> toppings, List<Drink> drinks) {
+//        List<Pizza> pizzas = new ArrayList<>();
+//        List<Topping> toppings = new ArrayList<>();
+//        List<Drink> drinks = new ArrayList<>();
+//
+//        pizzas.add(pizzaMargherita());
+//        pizzas.add(pizzaHawaiian());
+//        pizzas.add(pizzaSalami());
+//
+//        toppings.add(cheese());
+//        toppings.add(ham());
+//        toppings.add(onions());
+//        toppings.add(pineapple());
+//        toppings.add(salami());
+//
+//        drinks.add(lemonade());
+//        drinks.add(water());
+//        drinks.add(wine());
 
         return new MenuPrint(pizzas, toppings, drinks);
     }
