@@ -2,11 +2,9 @@ package nicolagraziani.U5_W1_D1.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 public class Table {
     private Order order;
     private int number;
@@ -17,5 +15,14 @@ public class Table {
         this.number = number;
         this.seats = seats;
         this.reserved = reserved;
+    }
+
+    @Override
+    public String toString() {
+        return "Table{" +
+                "number=" + number +
+                ", seats=" + seats +
+                ", reserved=" + reserved +
+                '}';
     }
 }

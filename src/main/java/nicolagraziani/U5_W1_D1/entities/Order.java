@@ -25,6 +25,7 @@ public class Order {
         this.state = state;
         this.seats = seats;
         this.time = time;
+        this.seatsPrice = seatsPrice;
     }
 
     public double getTotal() {

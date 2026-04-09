@@ -1,13 +1,9 @@
 package nicolagraziani.U5_W1_D1.config;
 
 import nicolagraziani.U5_W1_D1.entities.*;
-import nicolagraziani.U5_W1_D1.enums.OrderState;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,17 +106,13 @@ public class ConfigClass {
     }
 
     @Bean(name = "table1")
-    public Table table1(@Qualifier("Order1") Order order) {
-        Table table = new Table(1, 4, true);
-        table.setOrder(order);
-        return table;
+    public Table table1() {
+        return new Table(1, 4, true);
     }
 
     @Bean(name = "table2")
-    public Table table2(@Qualifier("Order2") Order order) {
-        Table table = new Table(2, 2, false);
-        table.setOrder(order);
-        return table;
+    public Table table2() {
+        return new Table(2, 2, false);
     }
 
     @Bean(name = "table3")
@@ -128,14 +120,14 @@ public class ConfigClass {
         return new Table(3, 5, false);
     }
 
-    @Bean(name = "Order1")
-    public Order order1(@Value("${seats.price}") double seatPrice) {
-        return new Order(List.of(pizzaMargherita(), pizzaSalami(), pizzaMargherita(), pizzaHawaiian(), lemonade(), wine(), water()), 1, OrderState.SERVITO, 4, LocalTime.now(), seatPrice);
-    }
-
-    @Bean(name = "Order2")
-    public Order order2(@Value("${seats.price}") double seatPrice) {
-        return new Order(List.of(pizzaSalami(), pizzaHawaiian(), lemonade(), wine()), 2, OrderState.IN_CORSO, 2, LocalTime.now(), seatPrice);
-    }
+//    @Bean(name = "Order1")
+//    public Order order1(@Value("${seats.price}") double seatPrice) {
+//        return new Order(List.of(pizzaMargherita(), pizzaSalami(), pizzaMargherita(), pizzaHawaiian(), lemonade(), wine(), water()), 1, OrderState.SERVITO, 4, LocalTime.now(), seatPrice);
+//    }
+//
+//    @Bean(name = "Order2")
+//    public Order order2(@Value("${seats.price}") double seatPrice) {
+//        return new Order(List.of(pizzaSalami(), pizzaHawaiian(), lemonade(), wine()), 2, OrderState.IN_CORSO, 2, LocalTime.now(), seatPrice);
+//    }
 
 }
